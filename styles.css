@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body {
+    background-color: #000000;
+}
+
+.container-buttons {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center; /*Centralizado na Horizontal*/
+    align-items: center; /*Centralizado na Vertical*/
+    gap: 20px;
+}
+
+button {
+    background-color: #79CB15;
+    border: none;
+    border-radius: 5px;
+    color: #000000;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 12px;
+    width: 110px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    opacity: 0.6;
+}
+
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    gap: 20px;
+    justify-content: center;
+}
+
+li {
+    border: 2px solid #8133FF;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+p {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.item-price {
+    color: #79CB15;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+    .container-buttons {
+        margin: 30px 0;
+        display: grid;
+        grid-template-columns: 100px 100px;
+        place-items: center;
+        gap: 20px;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: 180px 180px;
+        gap: 20px;
+        justify-content: center;
+    }
+}
