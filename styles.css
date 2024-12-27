@@ -94,6 +94,6 @@ p {
     }
 
     .items-container:has(li:nth-child(3)) ul {
-        grid-template-columns: repeat(2, 200px); /* Ajuste para 2 colunas no caso de 3 itens */
+        grid-template-columns: repeat(2, 180px); /* Ajuste para 2 colunas no caso de 3 itens */
     }
 }
