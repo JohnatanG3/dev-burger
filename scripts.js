@@ -4,24 +4,24 @@ const buttonMapear = document.querySelector(".mapear");
 const somarValores = document.querySelector(".somar");
 const filtrarVeganos = document.querySelector(".filtrar");
 
-// Mostra todos os intens na tela
+// Mostra todos os itens na tela
 function mostrarTudo(array) {
     let myLi = ''; // Limpa a variável a cada vez que a função é chamada
 
     array.forEach(product => {
         myLi += `
             <li>
-                <img src="${product.src}" alt="${product.name}">
-                <p>${product.name}</p>
-                <p class="item-price">R$ ${product.price.toFixed(2)}</p>
+                <img src="${product.src}" alt="${product.name}"> <!-- Exibe a imagem -->
+                <p>${product.name}</p> <!-- Exibe o nome do produto -->
+                <p class="item-price">R$ ${product.price.toFixed(2)}</p> <!-- Exibe o preço -->
             </li>
         `;
     });
 
-    list.innerHTML = myLi;
+    list.innerHTML = myLi; // Atualiza o conteúdo da lista
 }
 
-// Mapeia os valores de todos os produtos e da desconto de 10%
+// Mapeia os valores de todos os produtos e aplica desconto de 10%
 function mapearItens() {
     // Aplica 10% de desconto em cada preço
     const newPrices = menuOptions.map(product => {
@@ -31,28 +31,28 @@ function mapearItens() {
         };
     });
 
-    // Atualiza a lista de produtos com o novo preço
-    mostrarTudo(newPrices);
+    mostrarTudo(newPrices); // Exibe os itens com preços atualizados
 }
 
-// Somar todos os preços dos itens
-function somarTodosOsItens () {
-    const valorTotal = menuOptions.reduce((acumulador, atual) => acumulador + atual.price, 0);
+// Soma todos os preços dos itens
+function somarTodosOsItens() {
+    const valorTotal = menuOptions.reduce((acumulador, atual) => acumulador + atual.price, 0); // Soma os preços
 
     list.innerHTML = `
     <li>
-        <p class="item-price">O Valor Total dos Intens É R$ ${valorTotal.toFixed(2)}</p>
+        <p class="item-price">O Valor Total dos Itens é R$ ${valorTotal.toFixed(2)}</p> <!-- Exibe o total -->
     </li>
     `;
 }
 
-// Filtrar hamburgers Veganos
+// Filtra apenas os hambúrgueres veganos
 function filtrarVeganosItens() {
-    const hamburguerVegano = menuOptions.filter(product => product.vegan === true);
-    mostrarTudo(hamburguerVegano);
+    const hamburguerVegano = menuOptions.filter(product => product.vegan === true); // Filtra os itens veganos
+    mostrarTudo(hamburguerVegano); // Exibe os itens veganos
 }
 
-buttonMostrarTudo.addEventListener("click", () => mostrarTudo(menuOptions)); // Referência para a função
-buttonMapear.addEventListener("click", mapearItens);
-somarValores.addEventListener("click", somarTodosOsItens);
-filtrarVeganos.addEventListener("click", filtrarVeganosItens);
+// Adiciona eventos para os botões
+buttonMostrarTudo.addEventListener("click", () => mostrarTudo(menuOptions)); // Exibe todos os itens
+buttonMapear.addEventListener("click", mapearItens); // Aplica desconto
+somarValores.addEventListener("click", somarTodosOsItens); // Soma os preços
+filtrarVeganos.addEventListener("click", filtrarVeganosItens); // Filtra os veganos

@@ -2,84 +2,98 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", serif;
+    font-family: "Poppins", serif; /* Define a fonte global */
 }
 
 body {
-    background-color: #000000;
+    background-color: #000000; /* Define o fundo preto */
 }
 
 .container-buttons {
-    margin: 30px 0;
+    margin: 30px 0; /* Espaçamento vertical para os botões */
     display: flex;
-    justify-content: center; /*Centralizado na Horizontal*/
-    align-items: center; /*Centralizado na Vertical*/
-    gap: 20px;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza os botões verticalmente */
+    gap: 20px; /* Espaço entre os botões */
 }
 
 button {
-    background-color: #79CB15;
-    border: none;
-    border-radius: 5px;
-    color: #000000;
-    padding: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-    font-size: 12px;
-    width: 110px;
+    background-color: #79CB15; /* Cor de fundo do botão */
+    border: none; /* Remove bordas */
+    border-radius: 5px; /* Deixa os cantos arredondados */
+    color: #000000; /* Cor do texto */
+    padding: 10px; /* Espaçamento interno */
+    cursor: pointer; /* Define o ponteiro ao passar sobre o botão */
+    font-weight: bold; /* Negrito para o texto */
+    transition: 0.3s; /* Transição suave em hover e active */
+    font-size: 12px; /* Tamanho da fonte */
+    width: 110px; /* Largura fixa */
 }
 
 button:hover {
-    opacity: 0.8;
+    opacity: 0.8; /* Efeito visual ao passar o mouse */
 }
 
 button:active {
-    opacity: 0.6;
+    opacity: 0.6; /* Efeito visual ao clicar */
 }
 
 ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 200px 200px 200px;
-    gap: 20px;
-    justify-content: center;
+    list-style: none; /* Remove os marcadores da lista */
+    display: grid; /* Exibe os itens como uma grade */
+    grid-template-columns: 200px 200px 200px; /* Três colunas fixas */
+    gap: 20px; /* Espaço entre os itens */
+    justify-content: center; /* Centraliza os itens horizontalmente */
 }
 
 li {
-    border: 2px solid #8133FF;
-    border-radius: 5px;
-    padding: 5px;
+    border: 2px solid #8133FF; /* Borda colorida ao redor de cada item */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 5px; /* Espaçamento interno */
+}
+
+/* Centraliza dinamicamente com base na quantidade de itens */
+.items-container:has(li:only-child) ul {
+    justify-content: center;
+    grid-template-columns: 200px; /* Um único item centralizado */
+}
+
+.items-container:has(li:nth-child(2)) ul {
+    grid-template-columns: repeat(2, 200px); /* Dois itens */
+}
+
+.items-container:has(li:nth-child(3)) ul {
+    grid-template-columns: repeat(3, 200px); /* Três itens */
 }
 
 img {
-    width: 100%;
-    border-radius: 5px;
+    width: 100%; /* Garante que a imagem ocupe toda a largura disponível */
+    border-radius: 5px; /* Cantos arredondados */
 }
 
 p {
-    color: #FFFFFF;
-    text-align: center;
+    color: #FFFFFF; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
 }
 
 .item-price {
-    color: #79CB15;
-    font-weight: bold;
+    color: #79CB15; /* Cor verde para o preço */
+    font-weight: bold; /* Destaque para o preço */
 }
 
 @media screen and (max-width: 900px) {
     .container-buttons {
-        margin: 30px 0;
-        display: grid;
-        grid-template-columns: 100px 100px;
-        place-items: center;
-        gap: 20px;
+        display: grid; /* Exibe os botões como uma grade em telas menores */
+        grid-template-columns: 100px 100px; /* Duas colunas para os botões */
+        place-items: center; /* Centraliza os botões */
+        gap: 20px; /* Espaço entre os botões */
     }
 
     ul {
-        display: grid;
-        grid-template-columns: 180px 180px;
-        gap: 20px;
-        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Responsividade para os itens */
+    }
+
+    .items-container:has(li:nth-child(3)) ul {
+        grid-template-columns: repeat(2, 200px); /* Ajuste para 2 colunas no caso de 3 itens */
     }
 }
