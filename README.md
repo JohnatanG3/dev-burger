@@ -26,6 +26,15 @@ Você pode visualizar o site [aqui](https://johnatang3.github.io/dev-burger/).
 - **CSS3**: Estilização da página, com foco em responsividade e layout limpo.
 - **JavaScript**: Lógica e manipulação de DOM.
 
+## 📱 Responsividade
+
+A aplicação foi projetada para ser responsiva, ou seja, ela se adapta automaticamente a diferentes tamanhos de tela. Isso inclui:
+
+- Dispositivos Móveis: O layout é ajustado para telas menores, garantindo uma navegação suave.
+- Tablets: A interface é otimizada para oferecer uma experiência de visualização confortável.
+- Desktops: A estrutura da página se expande para oferecer um layout mais espaçoso, com foco na estética e na usabilidade.
+- O design utiliza media queries no CSS para garantir que a página se ajuste corretamente em dispositivos de diferentes tamanhos.
+
 ## 🛠️ Como Contribuir com o projeto
 
 Se você quiser contribuir com este projeto, siga estas etapas:
